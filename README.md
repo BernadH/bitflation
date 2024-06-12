@@ -15,11 +15,12 @@ This module can calculate several metrics of Bitcoin’s monetary inflation usin
 
 1. *type=”cummulative”* (default). Calculates the cumulative Block over Block inflation from Block Height 1 to a given block height.
 
-2. *type=”price”*. This is the classic methodology for calculating price inflation. Calculates the inflation over a set of blocks defined by periodicity ("block", "daily", "weekly", "monthly", "yearly" or "epochly").
+2. *type=”price”*. This is the classic methodology for calculating price inflation such as CPI. Calculates the inflation over a set of blocks defined by periodicity ("block", "daily", "weekly", "monthly", "yearly" or "epochly").
+*Note: comparing Bitcoin monetary inflation to price inflation metrics such as CPI is not an apples to apples comparison. For comparing against such metrics, one should use Bitcoin's purchasing power instead. Nevertheless, some people seem to like doing this (erroneous) comparison, and that's why the module can do it.*
 
-3. *type="harmonized"*. Calculates the cumulative inflation over a set of blocks. Blocks are aggregated over a period of time defined by periodicity. This method is usefull to compare Bitcoin's monetary inflation to fiat currencies monetary inflation, M1 and/or M2 (e.g. one can easily download US$ money supply on a weekly, calculate the cummulative change and compare it to Bitcoin's harmonized monetary inflation with *periodicity = weekly*). Harmonized inflation calculation can be calculated for a specific length of time by providing a start Block Height (defaults to *starth = 1*).
+3. *type="harmonized"*. Calculates the cumulative inflation over a set of blocks. Blocks are aggregated over a period of time defined by periodicity. This method is usefull to compare Bitcoin's monetary inflation to fiat currencies monetary inflation, M1/M2/M3 (e.g. one can easily download US$ money supply on a weekly, calculate the cummulative change and compare it to Bitcoin's harmonized monetary inflation with *periodicity = weekly*). Harmonized inflation calculation can be calculated for a specific length of time by providing a start Block Height (defaults to *starth = 1*).
 
-    Note: Similarly to M1 and M2 calculations, the ending Block Height is set to the nearest integer of the formula *(endh - starth)/periodicity*. In other words, you cannot know the exact monetary supply of a given Friday if data is relased every Wednesday. Instead you'd need to use last Wednesday's monetary supply.
+*Note: Similarly to M1/M2/M3 calculations, the ending Block Height is set to the nearest integer of the formula *(endh - starth)/periodicity*. In other words, you cannot know the exact monetary supply of a given Friday if data is relased every Wednesday. Instead you'd need to use last Wednesday's monetary supply.*
 
 5. *type="csnap"*. Calculate the cumulative Block over Block inflation for a set of blocks. If a starting Block Height is provided, inflation is calculated from starth to endh, otherwhise starting Block Height is defined by periodicity.
 
