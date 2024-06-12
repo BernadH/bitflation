@@ -23,6 +23,8 @@ This module can calculate several metrics of Bitcoin’s monetary inflation usin
 
 5. *type="csnap"*. Calculate the cumulative Block over Block inflation for a set of blocks. If a starting Block Height is provided, inflation is calculated from starth to endh, otherwhise starting Block Height is defined by periodicity.
 
+**Cummulative inflation calculations (cummulative_inflation() and snap_inflation()) are rather slow right now. They need a multithreading approach to work more efficiently (preferred) or some hardcoded checkpoints.**
+
 \*Human defined times are converted to blocks under the assumption that block generation moves at a speed of 1\*10<sup>-1</sup> blocks\*minute<sup>-1</sup>.
 
     - daily = 144 blocks
